@@ -1,0 +1,77 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/Roboto-Regular.ttf');
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/Roboto-Bold.ttf');
+  font-weight: bold;
+}
+* {
+  outline: 0;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+}
+.no-padding-left {
+  padding-left: 0;
+}
+.no-padding-right {
+  padding-right: 0;
+}
+.side-nav li a.button {
+  font-weight: normal;
+  line-height: 1.1em;
+  color: #fff;
+  text-align: left;
+  margin: 0;
+  z-index: 1;
+  transition: background-color 218ms ease-out;
+}
+.side-nav li a.button.secondary {
+  color: #333;
+}
+.side-nav li a.button.secondary:active {
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+}
+.side-nav li a.button.secondary.active {
+  background-color: #fff;
+  border-right-color: #fff;
+}
+.side-nav {
+  padding: 0;
+  margin-top: 1px;
+}
+.side-nav li {
+  margin: -1px 0 0;
+}
+.panel.options {
+  background-color: #fff;
+  min-height: 300px;
+  margin-left: -1px;
+}
+.options .switch {
+  width: 72px;
+}
+
+button.record {
+  width: 80px;
+  height: 32px;
+  padding: 0;
+}
+/*
+button:focus {
+  background-color: #2ba6cb;
+}
+button.alert:focus {
+  background-color: #c60f16;
+}
+button.success:focus {
+  background-color: #5da423
+}
+*/
+
+ul[class^="small-block-grid"] li {
+  padding: 0 0.625em 0;
+} 

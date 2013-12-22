@@ -1,0 +1,31 @@
+<form class="custom" ng-show="isReady">
+  <div class="row">
+    <div class="small-4 columns"><label class="inline right">{{ settings.is_active.label }}</label></div>
+    <div class="small-8 columns">
+      <div class="row">
+        <div class="small-12">
+          <div class="switch round">
+            <input id="is_active" name="switch-is_active" type="radio" 
+              ng-checked="!settings.is_active.value" ng-click="switchSettingValue('is_active')">
+            <label for="is_active">Off</label>
+            <input id="is_active1" name="switch-is_active" type="radio" 
+              ng-checked="settings.is_active.value" ng-click="switchSettingValue('is_active')">
+            <label for="is_active1">On</label>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-4 columns"><label class="inline right">{{ settings.transition.label }}</label></div>
+    <div class="small-8 columns">
+      <div class="row">
+        <div class="small-4">
+          <select class="medium" ng-model="settings.transition.value" 
+            ng-options="o.value as o.label for o in settings.transition.options" ng-change="saveChanges()"></select>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

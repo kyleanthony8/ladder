@@ -1,0 +1,36 @@
+<form>
+  <div style="min-height: {{ getRepeaterHeight() }}px">
+    <div class="row" ng-repeat="shortcut in shortcuts | toArray | orderBy:'position'">
+      <div class="small-4 columns"><label class="inline right">{{ shortcut.label }}</label></div>
+      <div class="small-8 columns">
+        <div class="row">
+          <div class="small-5 columns">
+            <input type="text" ng-model="shortcut.value">
+          </div>
+          <div class="small-7 columns">
+            <button class="small record"
+              ng-click="switchKeypressRecorder(shortcut.$key);blur($event)"
+              ng-class="{ 'alert': isKeypressRecorderActive(shortcut.$key) }"
+              ng-bind="isKeypressRecorderActive(shortcut.$key) && 'Stop' || 'Record'"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="small-12 columns">
+      <button class="" 
+        ng-click="saveChanges();blur($event)" 
+        ng-class="{ 'success': !isSynced }" 
+        ng-disabled="!isReady">Save Changes</button>
+      <button class="" 
+        ng-click="cancelChanges();blur($event)" 
+        ng-class="{ 'alert': !isSynced }" 
+        ng-disabled="!isReady">Cancel</button>
+      <button class="" 
+        ng-click="restoreDefaults();blur($event)"
+        ng-disabled="!isReady">Restore Defaults</button>
+    </div>
+  </div>
+</form>

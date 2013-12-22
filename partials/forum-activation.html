@@ -1,0 +1,32 @@
+<form class="custom">
+  <ul class="small-block-grid-3" style="min-height: {{ getRepeaterHeight() }}px">
+    <li ng-repeat="forum in forums | toArray | orderBy:'position'">
+      <div class="row">
+        <div class="small-6 columns"><label class="inline right">{{ forum.label }}</label></div>
+        <div class="small-6 columns">
+          <div class="row">
+            <div class="small-12">
+              <div class="switch round">
+                <input id="{{ forum.$key }}" name="switch-{{ forum.$key }}" type="radio" 
+                  ng-checked="!forum.value" ng-click="switchForumValue(forum.$key)">
+                <label for="{{ forum.$key }}">Off</label>
+                <input id="{{ forum.$key }}1" name="switch-{{ forum.$key }}" type="radio" 
+                  ng-checked="forum.value" ng-click="switchForumValue(forum.$key)">
+                <label for="{{ forum.$key }}1">On</label>
+                <span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+  <hr>
+  <div class="row">
+    <div class="small-12 columns">
+      <button class="" 
+        ng-click="restoreDefaults();blur($event)"
+        ng-disabled="!isReady">Restore Defaults</button>
+    </div>
+  </div>
+</form>
